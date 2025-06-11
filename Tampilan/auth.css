@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .auth-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #12022F 0%, #A439FF 40%, #FF4FE0 70%, #57C2FF 100%);
+}
+
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            max-width: 24rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .glass-effect:hover::before {
+            left: 100%;
+        }
+
+        .input-style {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            transition: all 0.3s ease;
+            padding: 8px 40px 8px 16px;
+            height: 42px;
+            width: 100%;
+            font-size: 0.95rem;
+        }
+
+        .input-style:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .input-style::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: normal;
+        }
+
+        .auth-btn {
+            background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+            transition: all 0.3s ease;
+        }
+
+        .auth-btn:hover {
+            background: linear-gradient(135deg, #357ABD 0%, #4A90E2 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+        }
+
+        .social-btn {
+            background: rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Custom animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-slideUp {
+            animation: slideUp 0.6s ease forwards;
+        }
+
+        .form-container {
+            animation: slideUp 0.6s ease forwards;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Style untuk toggle password */
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 42px;
+            padding-right: 4px;
+        }
+
+        /* Style untuk garis pemisah */
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .divider span {
+            padding: 0 10px;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Pastikan container password relative untuk positioning yang tepat */
+        .password-container {
+            position: relative;
+            width: 100%;
+        }
+
+        /* Tambahan style untuk animasi hover pada judul */
+        .glass-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .glass-effect:hover::before {
+            left: 100%;
+        }
+
+        /* Update style untuk tab buttons */
+        .tab-btn {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #FDB827;
+            transition: width 0.3s ease;
+        }
+
+        .tab-btn:hover::after,
+        .tab-btn.active::after {
+            width: 80%;
+        }
+
+        /* Class untuk container yang lebih lebar saat register */
+        .register-width {
+            max-width: 600px !important;
+            width: 90% !important;
+            margin: 0 auto;
+            padding: 1.75rem !important;
+        }
+
+        /* Khusus styling untuk input fields di register form */
+        #registerForm .input-style {
+            min-width: 240px;
+            width: 100%;
+            padding: 8px 40px 8px 16px;
+            height: 42px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .register-width {
+                width: 90% !important;
+                min-width: 280px !important;
+                padding: 1.25rem !important;
+            }
+            #registerForm .form-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .register-width {
+                width: 90% !important;
+                min-width: 520px !important;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .register-width {
+                width: 90% !important;
+                min-width: 580px !important;
+            }
+        }
+
+        /* Memperbesar gap antara kolom */
+        #registerForm .form-grid {
+            gap: 1.5rem;
+        }
+
+        /* Container padding adjustments */
+        .glass-effect {
+            padding: clamp(1.25rem, 4vw, 1.75rem);
+        }
+
+        /* Adjust grid gap based on screen size */
+        .form-grid {
+            display: grid;
+            gap: clamp(0.75rem, 2vw, 1rem);
+        }
+
+        /* Update untuk register form grid */
+        #registerForm .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        /* Khusus styling untuk input fields di register form */
+        #registerForm .input-style {
+            width: 100%;
+            max-width: 100%;
+            min-width: unset;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .register-width {
+                max-width: 95% !important;
+                padding: 1.25rem !important;
+            }
+            #registerForm .form-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        @media (min-width: 641px) {
+            .register-width {
+                max-width: 600px !important;
+                padding: 1.75rem !important;
+            }
+        }
