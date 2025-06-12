@@ -12,6 +12,56 @@
             background-color: #f8f9fa;
         }
 
+        /* Sidebar Styles */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            height: 100%;
+            z-index: 100;
+        }
+
+        .logo {
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 20px 0;
+        }
+
+        .sidebar nav ul li {
+            margin: 5px 0;
+        }
+
+        .sidebar nav ul li a {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .sidebar nav ul li a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar nav ul li.active a,
+        .sidebar nav ul li a:hover {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            border-left: 4px solid var(--primary-color);
+        }
+
         /* Main Content */
         .main-content {
             flex: 1;
